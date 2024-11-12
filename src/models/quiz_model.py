@@ -5,15 +5,18 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import PickleType
 
 
-
 class QuizModel(db.Model):
     # Set up the table name
-    __tablename__ = 'quizzes'
-    
+    __tablename__ = "quizzes"
+
     # Define table columns
     id = db.Column(db.Integer, primary_key=True)  # Primary key column named `id`
-    title = db.Column(db.String, nullable=False)  # String column `title` that cannot be null
-    questions = db.Column(PickleType, nullable=False)  # Column `questions` to store a list using PickleType
+    title = db.Column(
+        db.String, nullable=False
+    )  # String column `title` that cannot be null
+    questions = db.Column(
+        PickleType, nullable=False
+    )  # Column `questions` to store a list using PickleType
 
     def __init__(self, title, questions):
         # Initialize the model with title and questions
