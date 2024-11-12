@@ -30,7 +30,9 @@ def test_get_quiz(mock_get_quiz, client):
 @patch.object(QuizService, "evaluate_quiz")
 def test_submit_quiz(mock_evaluate_quiz, client):
     mock_evaluate_quiz.return_value = (1, "Quiz evaluated successfully")
-    response = client.post("/api/quizzes/1/submit", json={"answers": ["A1", "A2"]})
+    response = client.post(
+        "/api/quizzes/1/submit", json={"answers": ["A1", "A2"]}
+    )
     assert response.status_code == 200
     assert response.json["score"] == 1
     assert response.json["message"] == "Quiz evaluated successfully"

@@ -22,7 +22,8 @@ class QuizService:
         score = sum(
             1
             for i, answer in enumerate(user_answers)
-            if i < len(correct_answers) and answer == correct_answers[i]["answer"]
+            if i < len(correct_answers)
+            and answer == correct_answers[i]["answer"]
         )
         message = f"You scored {score} out of {len(correct_answers)}"
         return score, message

@@ -10,7 +10,9 @@ class QuizModel(db.Model):
     __tablename__ = "quizzes"
 
     # Define table columns
-    id = db.Column(db.Integer, primary_key=True)  # Primary key column named `id`
+    id = db.Column(
+        db.Integer, primary_key=True
+    )  # Primary key column named `id`
     title = db.Column(
         db.String, nullable=False
     )  # String column `title` that cannot be null
