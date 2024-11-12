@@ -1,6 +1,5 @@
 # src/models/quiz_model.py
 from src.database import db
-from flask_sqlalchemy import SQLAlchemy
 
 from sqlalchemy import PickleType
 
